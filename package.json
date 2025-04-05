@@ -33,5 +33,9 @@
     "@commitlint/config-conventional": "^19.8.0",
     "husky": "^9.1.7",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "chromadb": "^2.2.0",
+    "chromadb-default-embed": "^2.14.0"
   }
 }

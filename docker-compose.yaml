@@ -1,0 +1,25 @@
+services:
+  db:
+    profiles:
+      - local
+      - infra
+    image: chromadb/chroma
+    hostname: db
+    restart: unless-stopped
+    ports:
+      - '${DATABASE_PORT:?DATABASE_PORT env var is missing on .env file}:8000'
+  app:
+    profiles:
+      - local
+    build: .
+    #command: ./wait-for.sh db:8000 -- npm run start
+    hostname: app
+    restart: unless-stopped
+    ports:
+      - '${APP_PORT:?APP_PORT env var is missing on .env file}:${APP_PORT}'
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: 'local'
+    depends_on:
+      - db
