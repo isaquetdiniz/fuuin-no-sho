@@ -92,10 +92,7 @@ npm run test
 
 ## Tecnologias
 
-- [Next.js](https://nextjs.org/) – framework
 - [TypeScript](https://www.typescriptlang.org/) – language
-- [Tailwind](https://tailwindcss.com/) – CSS
-- [Vercel](https://vercel.com/) – deployments
 
 ## Documentação
 
@@ -103,13 +100,9 @@ Esse projeto está todo documento nesse mesmo reposítório, [clique aqui](/docs
 
 ## Créditos
 
-No momento está projeto está sendo desenvolvido e mantido por 
+No momento está projeto está sendo desenvolvido e mantido por
 
 - [Isaque Diniz - itd](https://github.com/isaquetdiniz)
-- [Gabriel Albertin - gav](https://github.com/gavgabriel)
-- [Ícaro Samico - ias6](https://github.com/Icaroamazonas)
-- [Lucas Távora - lnt](https://github.com/tavoralucas)
-- [Maria Bezerra - mbma](https://github.com/mariabdma)
 <a href="https://github.com/isaquetdiniz/fuuin-no-sho/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=isaquetdiniz/fuuin-no-sho" />
 </a>

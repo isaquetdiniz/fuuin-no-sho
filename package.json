@@ -1,0 +1,37 @@
+{
+  "name": "fuuin-no-sho",
+  "version": "1.0.0",
+  "description": "Projeto de treinamento de um agente para responder perguntas referentes ao RPG Shinobi no Sho.",
+  "engines": {
+    "node": ">=22.14.0",
+    "npm": ">=10.9.2"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaquetdiniz/fuuin-no-sho.git"
+  },
+  "author": "itd@cin.ufpe.br",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isaquetdiniz/fuuin-no-sho/issues"
+  },
+  "homepage": "https://github.com/isaquetdiniz/fuuin-no-sho#readme",
+  "keywords": [],
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "test:e2e": "echo \"Error: no test specified\" && exit 0",
+    "check": "npx @biomejs/biome check --unsafe src",
+    "check:fix": "npx @biomejs/biome check --unsafe --write src",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "husky": "^9.1.7",
+    "typescript": "^5.8.3"
+  }
+}
