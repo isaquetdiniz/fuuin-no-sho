@@ -1,41 +1,51 @@
 {
-  "name": "fuuin-no-sho",
-  "version": "1.0.0",
-  "description": "Projeto de treinamento de um agente para responder perguntas referentes ao RPG Shinobi no Sho.",
-  "engines": {
-    "node": ">=22.14.0",
-    "npm": ">=10.9.2"
-  },
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/isaquetdiniz/fuuin-no-sho.git"
-  },
-  "author": "itd@cin.ufpe.br",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/isaquetdiniz/fuuin-no-sho/issues"
-  },
-  "homepage": "https://github.com/isaquetdiniz/fuuin-no-sho#readme",
-  "keywords": [],
-  "scripts": {
-    "build": "npx tsc",
-    "start": "node dist/main.js",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "test:e2e": "echo \"Error: no test specified\" && exit 0",
-    "check": "npx @biomejs/biome check --unsafe src",
-    "check:fix": "npx @biomejs/biome check --unsafe --write src",
-    "prepare": "husky"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "husky": "^9.1.7",
-    "typescript": "^5.8.3"
-  },
-  "dependencies": {
-    "chromadb": "^2.2.0",
-    "chromadb-default-embed": "^2.14.0"
-  }
+	"name": "fuuin-no-sho",
+	"version": "1.0.0",
+	"description": "Projeto de treinamento de um agente para responder perguntas referentes ao RPG Shinobi no Sho.",
+	"engines": {
+		"node": ">=22.14.0",
+		"npm": ">=10.9.2"
+	},
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/isaquetdiniz/fuuin-no-sho.git"
+	},
+	"author": "itd@cin.ufpe.br",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/isaquetdiniz/fuuin-no-sho/issues"
+	},
+	"homepage": "https://github.com/isaquetdiniz/fuuin-no-sho#readme",
+	"keywords": [],
+	"scripts": {
+		"build": "rimraf dist && npx tsc",
+		"prestart": "npm run build",
+		"start": "node dist/main.js",
+		"test": "echo \"Error: no test specified\" && exit 0",
+		"test:e2e": "echo \"Error: no test specified\" && exit 0",
+		"check": "npx @biomejs/biome check --unsafe src",
+		"check:fix": "npx @biomejs/biome check --unsafe --write src",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@commitlint/cli": "^19.8.0",
+		"@commitlint/config-conventional": "^19.8.0",
+		"husky": "^9.1.7",
+		"rimraf": "^6.0.1",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"@langchain/community": "^0.3.39",
+		"@langchain/core": "^0.3.43",
+		"@langchain/ollama": "^0.2.0",
+		"chromadb": "^2.2.0",
+		"dotenv": "^16.4.7",
+		"langchain": "^0.3.20",
+		"pdf-parse": "^1.1.1"
+	},
+	"overrides": {
+		"@langchain/core": "^0.3.43"
+	}
 }

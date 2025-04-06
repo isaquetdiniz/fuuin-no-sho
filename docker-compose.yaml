@@ -3,7 +3,7 @@ services:
     profiles:
       - local
       - infra
-    image: chromadb/chroma
+    image: chromadb/chroma:1.0.0
     hostname: db
     restart: unless-stopped
     ports:
