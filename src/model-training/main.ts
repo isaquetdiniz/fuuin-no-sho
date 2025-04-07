@@ -1,12 +1,12 @@
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
-import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import "dotenv/config";
 import { OllamaEmbeddings } from "@langchain/ollama";
 import type { Document } from "langchain/document";
+import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
+import { config } from "../config";
 
 (async () => {
-	const loader = new PDFLoader("docs/shinobi-no-sho-4-1-b.pdf");
+	const loader = new PDFLoader(config.pdfPath);
 
 	const pdf = await loader.load();
 
@@ -29,11 +29,11 @@ import type { Document } from "langchain/document";
 	console.log("Docs generated!", transformedDocs.length);
 
 	const embeddings = new OllamaEmbeddings({
-		model: "nomic-embed-text",
+		model: config.embedding.modelName,
 	});
 
 	await Chroma.fromDocuments(transformedDocs, embeddings, {
-		collectionName: "rpg-rules",
+		collectionName: config.vectorStore.collectionName,
 	});
 
 	console.log("PDF was indexed!");
