@@ -11,17 +11,18 @@ import { config } from "../config";
 	const pdf = await loader.load();
 
 	const splitter = new RecursiveCharacterTextSplitter({
-		chunkSize: 500,
-		chunkOverlap: 50,
+		chunkSize: config.splitter.chunkSize,
+		chunkOverlap: config.splitter.chunkOverlap,
 	});
 
 	const docs = await splitter.splitDocuments(pdf);
+
 	const transformedDocs: Document<Record<string, string>>[] = docs.map(
 		(doc) => ({
 			pageContent: doc.pageContent,
 			metadata: {
 				source: doc.metadata.source,
-				loc: JSON.stringify(doc.metadata.loc),
+				pageNumber: String(doc.metadata.loc.pageNumber),
 			},
 		}),
 	);
