@@ -22,7 +22,9 @@ import { config } from "../config";
 			pageContent: doc.pageContent,
 			metadata: {
 				source: doc.metadata.source,
-				pageNumber: String(doc.metadata.loc.pageNumber),
+				pageNumber: doc.metadata.loc.pageNumber,
+				linesFrom: doc.metadata.loc.lines.from,
+				linesTo: doc.metadata.loc.lines.to,
 			},
 		}),
 	);
